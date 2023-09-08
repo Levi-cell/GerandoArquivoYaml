@@ -1,13 +1,14 @@
-import pytest
+"""Fazendo testes"""
 import os
-from main import dicionarioComentario
+import pytest
+
 
 @pytest.fixture
 
-def testGetComentariosYaml(dicionarioComentario):
-    # Teste para verificar se a função testGetComentariosYaml retorna uma lista de comentários não vazia
-    assert len(dicionarioComentario) > 0
+def test_get_comentarios_yaml(dicionario_comentario):
+    """Verificano se ele tem caracters"""
+    assert len(dicionario_comentario) > 0
 
-def testYamlFileCreated():
-    # Teste para verificar se o arquivo "Comentarios.yaml" foi criado
+def test_yaml_file_created():
+    """Testando se o arquivo existe"""
     assert os.path.exists("Comentarios.yaml")
